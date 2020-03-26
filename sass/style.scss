@@ -1,0 +1,552 @@
+/* START: media query */
+
+$mq-breakpoints: (
+  "xs": 320px,
+  "sm": 576px,
+  "md": 768px,
+  // "lg": 992px,
+    "lg": 960px,
+  "xl": 1200px
+);
+
+@mixin mq($breakpoint: medium) {
+  @media screen and (min-width: #{map-get($mq-breakpoints, $breakpoint)}) {
+    @content;
+  }
+}
+
+/* END: media query */
+
+$nearlyBlack: #191919;
+$scarlet: #eb3007;
+$light-shade-gray: #eee;
+
+/* autoprefixer grid: autoplace */
+
+@import "l-aside";
+/*Nav css goes here*/
+
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+// START: サーバーに上げるときには都度リセット ↓↓↓
+html {
+  font-family: "Roboto", sans-serif;
+  font-size: 62.5%;
+}
+body {
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+// END: サーバーに上げるときには都度リセット ↓↓↓
+
+/* Boostrap4のmargin-bottomをリセット*/
+ol,
+ul,
+dl {
+  margin-bottom: 0;
+}
+
+header {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: auto;
+  height: auto;
+  background: $nearlyBlack;
+  z-index: 10;
+  // background-color: $nearlyBlack;
+  // z-index: 2000;
+}
+
+.l-navigation {
+  width: 100%;
+  max-width: 117rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  grid-column: 1/3;
+  grid-row: 1/2;
+}
+
+.menu-icons {
+  color: $light-shade-gray;
+  font-size: 4rem;
+  position: absolute;
+  top: 50%;
+  right: 2rem;
+  transform: translateY(-50%);
+  cursor: pointer;
+  z-index: 1500;
+  display: block;
+  &--close {
+    display: none;
+  }
+}
+.globalMenu.active .menu-icons--close {
+  display: block;
+}
+
+.globalMenu.active .menu-icons--default {
+  display: none;
+}
+
+.globalMenu {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  height: 8rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.logo {
+  // width: 5rem;
+  // height: 5rem;
+  // background-color: $scarlet;
+  // border-radius: 50%;
+  // display: flex;
+  // margin-right: 5rem;
+  width: 12rem;
+  height: 4rem;
+  line-height: 4rem;
+  display: flex;
+  margin-right: 5rem;
+  justify-content: flex-start;
+  align-items: center;
+  text-decoration: none;
+  color: $light-shade-gray;
+}
+
+.logo .restaurant {
+  margin: auto;
+  font-size: 3rem;
+  color: $light-shade-gray;
+}
+
+/*トグルボタンのスタイルを指定*/
+.Toggle {
+  display: block;
+  // position: fixed; /* bodyに対しての絶対位置指定 */
+  position: absolute;
+  right: 13px;
+  top: 12px;
+  width: 42px;
+  height: 42px;
+  cursor: pointer;
+  z-index: 10000;
+}
+
+.Toggle span {
+  display: block;
+  position: absolute;
+  width: 30px;
+  border-bottom: solid 3px $light-shade-gray;
+  -webkit-transition: 0.35s ease-in-out; /*変化の速度を指定*/
+  -moz-transition: 0.35s ease-in-out; /*変化の速度を指定*/
+  transition: 0.35s ease-in-out; /*変化の速度を指定*/
+  left: 6px;
+}
+
+.Toggle span:nth-child(1) {
+  top: 9px;
+}
+
+.Toggle span:nth-child(2) {
+  top: 18px;
+}
+
+.Toggle span:nth-child(3) {
+  top: 27px;
+}
+
+/* 最初のspanをマイナス45度に */
+.Toggle.active span:nth-child(1) {
+  top: 18px;
+  left: 6px;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+/* 2番目と3番目のspanを45度に */
+.Toggle.active span:nth-child(2),
+.Toggle.active span:nth-child(3) {
+  top: 18px;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.nav-list {
+  display: none;
+  flex-direction: column;
+  align-items: initial;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  background-color: $nearlyBlack;
+  z-index: 1000;
+  overflow-y: scroll;
+}
+
+.NavMenu {
+  display: none;
+}
+
+.globalMenu.active .nav-list {
+  display: none;
+  // display: flex;
+}
+
+.NavMenu.active {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  z-index: 1000;
+  font-size: 1.6rem;
+  color: $light-shade-gray;
+  background-color: $nearlyBlack;
+  padding: 4rem;
+  overflow-y: scroll;
+  transform: translateZ(0);
+}
+
+.def h2 {
+  display: inline-block;
+  width: 72%;
+  padding: 4px 2px;
+  a {
+    font-weight: 400;
+    color: $light-shade-gray;
+  }
+}
+
+.def-list {
+  width: 72%;
+  z-index: 1500;
+  dt {
+    font-size: 2rem;
+    padding: 4px 2px;
+    border-bottom-color: $light-shade-gray;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+  }
+  dd li {
+    padding: 8px 4px;
+  }
+}
+
+.nav-list li {
+  line-height: 8rem;
+  position: relative;
+}
+.nav-list > li {
+  line-height: 6rem;
+}
+
+.sub-menu li {
+  line-height: 4rem;
+}
+
+.nav-list a {
+  display: block;
+  color: $light-shade-gray;
+  padding: 0 1.5rem;
+  text-transform: uppercase;
+  transition: color 650ms;
+}
+
+.nav-list .hoge {
+  display: block;
+  color: $light-shade-gray;
+  padding: 0 1.5rem;
+  text-transform: uppercase;
+  transition: color 650ms;
+}
+
+.nav-list a:hover {
+  color: $scarlet;
+}
+
+.nav-list .hoge:hover {
+  color: $scarlet;
+}
+
+.btn {
+  padding: 1.3rem;
+  display: inline-block;
+  background-color: $scarlet;
+  border: 2px solid $scarlet;
+  border-radius: 5rem;
+  transition: background-color 650ms;
+}
+
+.btn:hover {
+  color: $scarlet;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.sub-menu {
+  width: 20rem;
+  display: block;
+  position: initial;
+  border-top: 3px solid transparent;
+  border-left-color: $scarlet;
+  margin-left: 1rem;
+  background-color: $nearlyBlack;
+  z-index: 100;
+  top: 16rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 650ms ease;
+  max-height: 0;
+}
+
+.sub-menu:before {
+  display: none;
+}
+.sub-menu .sub-menu::before {
+  display: none;
+}
+
+.sub-menu .sub-menu {
+  border-top: none;
+  border-left: 3px solid $scarlet;
+  top: 0;
+  left: 160%;
+}
+
+// START: This Area "Order" Very Important!!
+.nav-list li:hover > .sub-menu {
+  top: auto;
+  opacity: 1;
+  visibility: visible;
+  max-height: initial;
+}
+
+.sub-menu li:hover > .sub-menu {
+  top: 0;
+  left: 100%;
+}
+
+li.move-right {
+  margin: 0 auto 0 0;
+  line-height: initial;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// ここまで0:31:50　https://youtu.be/wlCPOwBr7no
+// ⇒0:16:30あたりの　".nav-list li "の記述に原因あったことがわかる 誤)　.nav-list > li
+
+// END: This Area "Order" Very Important!!
+
+/*End Nav css*/
+
+/*Hero*/
+.hero {
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+    url("../images/bg.jpg") center no-repeat;
+  background-size: cover;
+  position: relative;
+  z-index: -1;
+  grid-column: 1 / 3;
+  grid-row: 2 / 3;
+}
+
+.text {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: $light-shade-gray;
+  text-align: center;
+}
+
+.text h1 {
+  font-size: 4rem;
+  margin: 2rem 0;
+  font-family: "Blastimo", sans-serif;
+}
+
+.text h2 {
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  font-weight: 300;
+}
+
+.text p {
+  font-size: 1.6rem;
+  margin-bottom: 5rem;
+}
+
+.text .btn {
+  font-size: 1.2rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  color: $light-shade-gray;
+  text-transform: uppercase;
+}
+.l-wrapper {
+  display: grid;
+  grid-template-columns: 30% 1fr;
+  grid-template-rows: 80px 1fr 400px 120px;
+}
+
+.l-aside {
+  grid-column: 1 / 2;
+  grid-row: 3 / 4;
+  background-color: #8e9eab;
+  overflow-y: scroll;
+}
+
+.l-main {
+  grid-column: 2 / 3;
+  grid-row: 3 / 4;
+  background-color: #eef2f3;
+}
+
+.l-footer {
+  grid-column: 1 / 3;
+  grid-row: 4 / 5;
+  background-color: #d7d2cc;
+  padding-bottom: 40px;
+}
+@include mq(lg) {
+  .text h1 {
+    font-size: 8rem;
+  }
+
+  .text .btn {
+    font-size: 1.6rem;
+  }
+  header {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    height: 80px;
+    background-color: $nearlyBlack;
+    // z-index: 2000;
+  }
+  .Toggle {
+    display: none;
+  }
+
+  .nav-list {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    position: static;
+    top: auto;
+    left: auto;
+    height: auto;
+    background-color: transparent;
+    z-index: 0;
+    overflow-y: visible;
+  }
+
+  .nav-list > li {
+    line-height: 4rem;
+    height: 4rem;
+  }
+  .sub-menu {
+    width: 20rem;
+    display: block;
+    position: absolute;
+    border-top: 3px solid $scarlet;
+    border-left-color: transparent;
+    margin-left: 0;
+    background-color: $nearlyBlack;
+    z-index: 100;
+    top: 16rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 650ms ease;
+    max-height: none;
+  }
+  .sub-menu:before {
+    display: block;
+    content: "";
+    position: absolute;
+    top: -2.4rem;
+    left: 3rem;
+    border: 1.2rem solid transparent;
+    border-bottom-color: $scarlet;
+  }
+  // .sub-menuの左に三角を配置
+  .sub-menu .sub-menu::before {
+    display: block;
+    top: 0.9rem;
+    left: -2.5rem;
+    border: 1.2rem solid transparent;
+    border-right-color: $scarlet;
+  }
+
+  // START: This Area "Order" Very Important!!
+  .nav-list li:hover > .sub-menu {
+    top: 4rem;
+    // top: 8rem;
+    opacity: 1;
+    visibility: visible;
+    max-height: none;
+  }
+
+  .sub-menu li:hover > .sub-menu {
+    top: 0;
+    left: 100%;
+  }
+
+  li.move-right {
+    margin: auto 0 auto auto;
+    line-height: initial;
+  }
+
+  .menu-icons {
+    display: none;
+  }
+
+  .l-footer {
+    grid-column: 1 / 3;
+    grid-row: 4 / 5;
+    background-color: #d7d2cc;
+    padding-bottom: 0;
+  }
+
+  // .globalMenu.active .menu-icons--close {
+  //   display: none;
+  // }
+
+  // .globalMenu.active .menu-icons--default {
+  //   display: none;
+  // }
+
+  // .globalMenu.active .nav-list {
+  //   display: flex;
+  // }
+}

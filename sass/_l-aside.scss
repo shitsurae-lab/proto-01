@@ -1,0 +1,75 @@
+.l-aside dt,
+.l-aside a,
+.l-aside li {
+  color: #eee;
+}
+.l-aside__def dt {
+  border: solid 1px #ddd;
+  padding: 8px;
+  margin-bottom: 6px;
+  position: relative;
+  height: 40px;
+  font-size: 16px;
+  font-weight: 400;
+  cursor: pointer;
+  &::after {
+    position: absolute;
+    top: 50%;
+    right: 16px;
+    transform: translateY(-50%);
+    font-family: "Material Icons";
+    content: "\e5cf";
+  }
+}
+
+.l-aside {
+  padding: 16px;
+  li {
+    position: relative;
+    color: $light-shade-gray;
+    font-size: 14px;
+    height: 36px;
+    padding: 6px 8px;
+    cursor: pointer;
+  }
+  &__def {
+    width: 96%;
+  }
+  &__list {
+    width: 96%;
+    &--child {
+      font-size: 14px;
+      border-bottom: 1px solid $light-shade-gray;
+      &.active {
+        background-color: #eee;
+        color: #8e9eab;
+      }
+    }
+    // 兄弟要素にul(slideToggle)がある場合
+    &--sibling {
+      padding: 6px 0px;
+      li::after {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+        font-family: "Material Icons";
+        content: "\e5cc";
+      }
+      li.active {
+        background-color: $light-shade-gray;
+        a {
+          color: #8e9eab;
+        }
+        &::after {
+          color: #8e9eab;
+        }
+      }
+    }
+    // 兄弟要素にul(slideToggle)がない場合
+    &Child {
+      font-size: 14px;
+      border-bottom: 1px solid $light-shade-gray;
+    }
+  }
+}

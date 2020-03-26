@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>responsive_navigation</title>
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- START: ↓↓↓ Google Material icon ↓↓↓  -->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <!-- END: ↑↑↑ Google Material icon ↑↑↑ -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- <script src="js/resnavigation.js"></script> -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+  </head>
+  <body ontouchstart="">
+    <!--Nav markup goes here-->
+    <div class="Toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <section class="l-wrapper">
+      <header>
+        <div class="l-navigation">
+          <div class="globalMenu">
+            <a href="index.html" class="logo">
+              LINK FLORIST
+              <!-- <ion-icon class="restaurant" name="restaurant-sharp" ></ion-icon> -->
+            </a>
+            <ul class="nav-list">
+              <!--↓↓↓ START navigation_item--00 ↓↓↓-->
+              <li>
+                <a href="#">Home</a>
+              </li>
+              <!--↑↑↑ END navigation_item--00 ↑↑↑-->
+              <!--↓↓↓ START navigation_item--01 ↓↓↓-->
+              <li>
+                <span class="hoge"
+                  >Style
+                  <ion-icon name="caret-down-sharp"></ion-icon>
+                </span>
+                <ul class="sub-menu">
+                  <li>
+                    <span class="hoge"
+                      >バラ
+                      <ion-icon name="caret-forward-sharp"></ion-icon>
+                    </span>
+                    <ul class="sub-menu">
+                      <li><a href="#">花束</a></li>
+                      <li><a href="#">バラ風呂</a></li>
+                      <li><a href="#">ローズボックス</a></li>
+                      <li><a href="#">還暦祝</a></li>
+                    </ul>
+                  </li>
+                  <li>
+                    <span class="hoge"
+                      >フラワーアレンジメント<ion-icon
+                        name="caret-forward-sharp"
+                      ></ion-icon
+                    ></span>
+                    <ul class="sub-menu">
+                      <li><a href="#">アレンジメント</a></li>
+                      <li><a href="#">ボックスアレンジメント</a></li>
+                      <li>
+                        <span class="hoge">胡蝶蘭</span>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <span class="hoge">観葉植物</span>
+                  </li>
+                  <li>
+                    <span class="hoge">スタンド花</span>
+                  </li>
+                  <li>
+                    <span class="hoge">プリザーブドフラワー</span>
+                  </li>
+                </ul>
+              </li>
+              <!--↑↑↑ END navigation_item--01 ↑↑↑-->
+              <!--↓↓↓ START navigation_item--02 ↓↓↓-->
+              <li>
+                <span class="hoge"
+                  >Scene
+                  <ion-icon name="caret-down-sharp"></ion-icon>
+                </span>
+                <ul class="sub-menu">
+                  <li>
+                    <a href="#">プロポーズ</a>
+                  </li>
+                  <li>
+                    <a href="#">誕生日/記念日 </a>
+                  </li>
+                  <li><a href="#">公演/発表会</a></li>
+                  <li><a href="#">観葉植物</a></li>
+                  <li><a href="#">歓送迎会</a></li>
+                  <li><a href="#">開店/開業祝</a></li>
+                  <li><a href="#">お見舞い/快気祝</a></li>
+                </ul>
+              </li>
+              <!--↑↑↑ END navigation_item--02 ↑↑↑-->
+              <!--↓↓↓ START navigation_item--03 ↓↓↓-->
+              <li>
+                <span class="hoge"
+                  >Flower Delivery
+                  <ion-icon name="caret-down-sharp"></ion-icon>
+                </span>
+                <ul class="sub-menu">
+                  <li>
+                    <a href="#">デリバリー対象商品</a>
+                  </li>
+                  <li>
+                    <a href="#">法人のお客様 </a>
+                  </li>
+                  <li><a href="#">スタンドの回収について</a></li>
+                </ul>
+              </li>
+              <!--↑↑↑ END navigation_item--03 ↑↑↑-->
+              <!--↓↓↓ START navigation_item--04 ↓↓↓-->
+              <li>
+                <span class="hoge"
+                  >Contact
+                  <ion-icon name="caret-down-sharp"></ion-icon>
+                </span>
+                <ul class="sub-menu">
+                  <li>
+                    <a href="#">よくあるご質問</a>
+                  </li>
+                  <li>
+                    <a href="#">お問い合わせ </a>
+                  </li>
+                </ul>
+              </li>
+              <!--↑↑↑ END navigation_item--04 ↑↑↑-->
+              <li>
+                <a href="#">Blog</a>
+              </li>
+              <li>
+                <a href="#">Sample</a>
+              </li>
+              <li class="move-right btn">
+                <a href="#">Cart</a>
+              </li>
+            </ul>
+            <div class="def NavMenu">
+              <h2><a href="#">Home</a></h2>
+              <dl class="def-list">
+                <!-- <dt>
+                HOME
+              </dt> -->
+                <dt>Style<ion-icon name="caret-down-sharp"></ion-icon></dt>
+                <dd>
+                  <ul>
+                    <li>
+                      バラ
+                      <ul>
+                        <li>花束</li>
+                        <li>バラ風呂</li>
+                        <li>ローズボックス</li>
+                      </ul>
+                    </li>
+                    <li>
+                      アレンジメント
+                      <ul>
+                        <li>フラワーアレンジメント</li>
+                        <li>ボックスアレンジメント</li>
+                      </ul>
+                    </li>
+                    <li>Dinner</li>
+                  </ul>
+                </dd>
+                <dt>Use<ion-icon name="caret-down-sharp"></ion-icon></dt>
+                <dd>
+                  <ul>
+                    <li>プロポーズ</li>
+                    <li>誕生日/記念日</li>
+                    <li>公演/発表会</li>
+                    <li>歓送迎会</li>
+                    <li>開店/開業祝</li>
+                    <li>お見舞い/快気祝</li>
+                  </ul>
+                </dd>
+              </dl>
+            </div>
+          </div>
+          <!-- END .globanMenu -->
+        </div>
+        <!-- END l-navigation -->
+      </header>
+
+      <!--Hero-->
+      <section class="hero">
+        <div class="text">
+          <h2>Proudly serving</h2>
+          <h1>Delicious Food Daily</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+          <a href="#" class="btn">Learn more</a>
+        </div>
+      </section>
+      <main class="l-main">
+        ここはmainのダミーテキスト。ここはmainのダミーテキスト。ここはmainのダミーテキスト。
+      </main>
+      <aside class="l-aside">
+        ここはsidebarのダミーテキスト。ここはsidebarのダミーテキスト。ここはsidebarのダミーテキスト。
+        <dl class="l-aside__def">
+          <dt>Style</dt>
+          <dd>
+            <ul class="l-aside__list">
+              <li class="l-aside__list--child">
+                バラ
+              </li>
+              <ul class="l-aside__list--sibling">
+                <li>
+                  <a href="#">花束</a>
+                </li>
+                <li>
+                  <a href="#">バラ風呂</a>
+                </li>
+                <li>
+                  <a href="#">ローズボックス</a>
+                </li>
+                <li>
+                  <a href="#">還暦祝</a>
+                </li>
+              </ul>
+              <li class="l-aside__list--child">
+                フラワーアレンジメント
+              </li>
+              <ul class="l-aside__list--sibling">
+                <li>
+                  <a href="#">アレンジメントボックス</a>
+                </li>
+                <li>
+                  <a href="#">ボックスアレンジメント</a>
+                </li>
+              </ul>
+              <li class="l-aside__listChild"><a href="#">胡蝶蘭</a></li>
+              <li class="l-aside__listChild"><a href="#">観葉植物</a></li>
+              <li class="l-aside__listChild"><a href="#">スタンド花</a></li>
+              <li class="l-aside__listChild">
+                <a href="#">プリザーブドフラワー</a>
+              </li>
+            </ul>
+          </dd>
+          <dt>Scene</dt>
+          <dd>
+            <ul class="l-aside__list">
+              <li class="l-aside__listChild">
+                <a href="#">プロポーズ</a>
+              </li>
+              <li class="l-aside__listChild">
+                <a href="#">誕生日</a>
+              </li>
+              <li class="l-aside__listChild">
+                <a href="#">公演・発表会</a>
+              </li>
+              <li class="l-aside__listChild">
+                <a href="#">歓送迎会</a>
+              </li>
+              <li class="l-aside__listChild">
+                <a href="#">開店・開業祝い</a>
+              </li>
+            </ul>
+          </dd>
+        </dl>
+      </aside>
+      <article class="p-floatingNav"></article>
+      <footer class="l-footer">
+        ここはfooterのダミーテキスト。ここはfooterのダミーテキスト。ここはfooterのダミーテキスト。
+      </footer>
+    </section>
+    <!-- END .l-wrapper -->
+    <script src="js/resnav.js"></script>
+    <script src="js/resnav-drowdown.js"></script>
+  </body>
+</html>
