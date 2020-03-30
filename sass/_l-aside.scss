@@ -70,6 +70,9 @@
     &Child {
       font-size: 14px;
       border-bottom: 1px solid $light-shade-gray;
+      &:last-child {
+        padding: 6px 8px 40px;
+      }
     }
   }
 }
