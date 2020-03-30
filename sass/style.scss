@@ -413,7 +413,7 @@ li.move-right {
 .l-wrapper {
   display: grid;
   grid-template-columns: 30% 1fr;
-  grid-template-rows: 80px 1fr 400px 120px;
+  grid-template-rows: 80px 1fr 800px 120px;
 }
 
 .l-aside {
@@ -421,6 +421,12 @@ li.move-right {
   grid-row: 3 / 4;
   background-color: #8e9eab;
   overflow-y: scroll;
+  -ms-overflow-style: none; /* IE, Edge 対応 */
+  scrollbar-width: none; /* Firefox 対応 */
+  &::-webkit-scrollbar {
+    /* Chrome, Safari 対応 */
+    display: none;
+  }
 }
 
 .l-main {
