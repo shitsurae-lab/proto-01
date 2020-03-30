@@ -513,8 +513,8 @@ li.move-right {
   display: grid;
   -ms-grid-columns: 30% 1fr;
   grid-template-columns: 30% 1fr;
-  -ms-grid-rows: 80px 1fr 400px 120px;
-  grid-template-rows: 80px 1fr 400px 120px;
+  -ms-grid-rows: 80px 1fr 800px 120px;
+  grid-template-rows: 80px 1fr 800px 120px;
 }
 
 .l-wrapper > *:nth-child(1) {
