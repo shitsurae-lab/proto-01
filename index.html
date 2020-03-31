@@ -12,9 +12,19 @@
       rel="stylesheet"
     />
     <!-- END: ↑↑↑ Google Material icon ↑↑↑ -->
-
+    <!-- START: ↓↓↓ Vegas.css ↓↓↓  -->
+    <!-- <link rel="stylesheet" href="css/vegas.min.css" /> -->
+    <!-- <link rel="stylesheet" href="css/vegas.min.css.map" /> -->
+    <!-- END: ↑↑↑ Vegas.css ↑↑↑ -->
+    <!-- START: ↓↓↓ swiper.css ↓↓↓  -->
+    <link rel="stylesheet" href="css/swiper.css" />
+    <!-- END: ↑↑↑ swiper.css ↑↑↑ -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <!-- <script src="js/resnavigation.js"></script> -->
+
+    <!-- START: ↓↓↓ swiper.js ↓↓↓  -->
+    <script src="js/swiper.min.js"></script>
+    <script src="js/swiper.option.js"></script>
+    <!-- END: ↑↑↑ swiper.js ↑↑↑ -->
     <script
       type="module"
       src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.esm.js"
@@ -62,12 +72,12 @@
                   </li>
                   <li>
                     <span class="hoge"
-                      >フラワーアレンジメント<ion-icon
+                      >アレンジメント<ion-icon
                         name="caret-forward-sharp"
                       ></ion-icon
                     ></span>
                     <ul class="sub-menu">
-                      <li><a href="#">アレンジメント</a></li>
+                      <li><a href="#">フラワーアレンジメント</a></li>
                       <li><a href="#">ボックスアレンジメント</a></li>
                       <li>
                         <span class="hoge">胡蝶蘭</span>
@@ -89,7 +99,7 @@
               <!--↓↓↓ START navigation_item--02 ↓↓↓-->
               <li>
                 <span class="hoge"
-                  >Scene
+                  >SCENE
                   <ion-icon name="caret-down-sharp"></ion-icon>
                 </span>
                 <ul class="sub-menu">
@@ -150,45 +160,116 @@
                 <a href="#">Cart</a>
               </li>
             </ul>
-            <div class="def NavMenu">
-              <h2><a href="#">Home</a></h2>
-              <dl class="def-list">
-                <!-- <dt>
-                HOME
-              </dt> -->
-                <dt>Style<ion-icon name="caret-down-sharp"></ion-icon></dt>
-                <dd>
-                  <ul>
-                    <li>
-                      バラ
-                      <ul>
-                        <li>花束</li>
-                        <li>バラ風呂</li>
-                        <li>ローズボックス</li>
+            <div class="def navMenu">
+              <div class="navMenu__inner">
+                <div class="l-modal">
+                  <dl class="l-modal__def">
+                    <dt>STYLE</dt>
+                    <dd>
+                      <ul class="l-modal__list">
+                        <li class="l-modal__list--child">
+                          バラ
+                        </li>
+                        <ul class="l-modal__list--sibling">
+                          <li>
+                            <a href="#">花束</a>
+                          </li>
+                          <li>
+                            <a href="#">バラ風呂</a>
+                          </li>
+                          <li>
+                            <a href="#">ローズボックス</a>
+                          </li>
+                          <li>
+                            <a href="#">還暦祝</a>
+                          </li>
+                        </ul>
+                        <li class="l-modal__list--child">
+                          アレンジメント
+                        </li>
+                        <ul class="l-modal__list--sibling">
+                          <li>
+                            <a href="#">フラワーアレンジメント</a>
+                          </li>
+                          <li>
+                            <a href="#">ボックスアレンジメント</a>
+                          </li>
+                        </ul>
+                        <li class="l-modal__listChild">
+                          <a href="#">胡蝶蘭</a>
+                        </li>
+                        <li class="l-modal__listChild">
+                          <a href="#">観葉植物</a>
+                        </li>
+                        <li class="l-modal__listChild">
+                          <a href="#">スタンド花</a>
+                        </li>
+                        <li class="l-modal__listChild">
+                          <a href="#">プリザーブドフラワー</a>
+                        </li>
                       </ul>
-                    </li>
-                    <li>
-                      アレンジメント
-                      <ul>
-                        <li>フラワーアレンジメント</li>
-                        <li>ボックスアレンジメント</li>
+                    </dd>
+                    <dt>SCENE</dt>
+                    <dd>
+                      <ul class="l-modal__list">
+                        <li class="l-modal__listChild">
+                          <a href="#">プロポーズ</a>
+                        </li>
+                        <li class="l-modal__listChild">
+                          <a href="#">誕生日</a>
+                        </li>
+                        <li class="l-modal__listChild">
+                          <a href="#">公演・発表会</a>
+                        </li>
+                        <li class="l-modal__listChild">
+                          <a href="#">歓送迎会</a>
+                        </li>
+                        <li class="l-modal__listChild">
+                          <a href="#">開店・開業祝い</a>
+                        </li>
                       </ul>
-                    </li>
-                    <li>Dinner</li>
-                  </ul>
-                </dd>
-                <dt>Use<ion-icon name="caret-down-sharp"></ion-icon></dt>
-                <dd>
-                  <ul>
-                    <li>プロポーズ</li>
-                    <li>誕生日/記念日</li>
-                    <li>公演/発表会</li>
-                    <li>歓送迎会</li>
-                    <li>開店/開業祝</li>
-                    <li>お見舞い/快気祝</li>
-                  </ul>
-                </dd>
-              </dl>
+                    </dd>
+                    <dt>Flower Delivery</dt>
+                    <!-- ↓↓↓ START: Flower Delivery_inner ↓↓↓  -->
+                    <dd>
+                      <ul class="l-modal__list">
+                        <li class="l-modal__listChild">
+                          <a href="#">プロポーズ</a>
+                        </li>
+                        <li class="l-modal__listChild">
+                          <a href="#">誕生日</a>
+                        </li>
+                        <li class="l-modal__listChild">
+                          <a href="#">公演・発表会</a>
+                        </li>
+                        <li class="l-modal__listChild">
+                          <a href="#">歓送迎会</a>
+                        </li>
+                        <li class="l-modal__listChild">
+                          <a href="#">開店・開業祝い</a>
+                        </li>
+                      </ul>
+                    </dd>
+                    <!-- ↑↑↑ END: Flower Delivery_inner ↑↑↑ -->
+                    <dt>SHOP</dt>
+                    <!-- ↓↓↓ START: SHOP_inner ↓↓↓  -->
+                    <dd>
+                      <ul class="l-modal__list">
+                        <li class="l-modal__listChild">
+                          <a href="#">アトレ四谷店</a>
+                        </li>
+                        <li class="l-modal__listChild">
+                          <a href="#">ウイング新橋店</a>
+                        </li>
+                        <li class="l-modal__listChild">
+                          <a href="#">大丸東京店</a>
+                        </li>
+                      </ul>
+                    </dd>
+                    <!-- ↑↑↑ END: SHOP_inner ↑↑↑ -->
+                  </dl>
+                </div>
+              </div>
             </div>
           </div>
           <!-- END .globanMenu -->
@@ -205,13 +286,35 @@
           <a href="#" class="btn">Learn more</a>
         </div>
       </section>
+      <!-- <section id="vegas" class="vegas-container"></section> -->
       <main class="l-main">
+        <div class="swiper-container">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img src="images/slide01.jpg" alt="" />
+            </div>
+            <div class="swiper-slide">
+              <img src="images/slide02.jpg" alt="" />
+            </div>
+            <div class="swiper-slide">
+              <img src="images/slide03.jpg" alt="" />
+            </div>
+            <div class="swiper-slide">
+              <img src="images/slide04.jpg" alt="" />
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>
+
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div>
+        <!-- END .swiper-container -->
         ここはmainのダミーテキスト。ここはmainのダミーテキスト。ここはmainのダミーテキスト。
       </main>
       <aside class="l-aside">
         ここはsidebarのダミーテキスト。ここはsidebarのダミーテキスト。ここはsidebarのダミーテキスト。
         <dl class="l-aside__def">
-          <dt>Style</dt>
+          <dt>STYLE</dt>
           <dd>
             <ul class="l-aside__list">
               <li class="l-aside__list--child">
@@ -232,11 +335,11 @@
                 </li>
               </ul>
               <li class="l-aside__list--child">
-                フラワーアレンジメント
+                アレンジメント
               </li>
               <ul class="l-aside__list--sibling">
                 <li>
-                  <a href="#">アレンジメントボックス</a>
+                  <a href="#">フラワーアレンジメント</a>
                 </li>
                 <li>
                   <a href="#">ボックスアレンジメント</a>
@@ -250,7 +353,7 @@
               </li>
             </ul>
           </dd>
-          <dt>Scene</dt>
+          <dt>SCENE</dt>
           <dd>
             <ul class="l-aside__list">
               <li class="l-aside__listChild">
@@ -271,6 +374,7 @@
             </ul>
           </dd>
           <dt>Flower Delivery</dt>
+          <!-- ↓↓↓ START: Flower Delivery_inner ↓↓↓  -->
           <dd>
             <ul class="l-aside__list">
               <li class="l-aside__listChild">
@@ -290,9 +394,26 @@
               </li>
             </ul>
           </dd>
+          <!-- ↑↑↑ END: Flower Delivery_inner ↑↑↑ -->
+          <dt>SHOP</dt>
+          <!-- ↓↓↓ START: SHOP_inner ↓↓↓  -->
+          <dd>
+            <ul class="l-aside__list">
+              <li class="l-aside__listChild">
+                <a href="#">アトレ四谷店</a>
+              </li>
+              <li class="l-aside__listChild">
+                <a href="#">ウイング新橋店</a>
+              </li>
+              <li class="l-aside__listChild">
+                <a href="#">大丸東京店</a>
+              </li>
+            </ul>
+          </dd>
+          <!-- ↑↑↑ END: SHOP_inner ↑↑↑ -->
         </dl>
       </aside>
-      <article class="p-floatingNav"></article>
+      <article class="l-floating_nav"></article>
       <footer class="l-footer">
         ここはfooterのダミーテキスト。ここはfooterのダミーテキスト。ここはfooterのダミーテキスト。
       </footer>

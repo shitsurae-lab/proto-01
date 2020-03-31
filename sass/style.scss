@@ -1,12 +1,12 @@
 /* START: media query */
 
 $mq-breakpoints: (
-  "xs": 320px,
-  "sm": 576px,
-  "md": 768px,
+  'xs': 320px,
+  'sm': 576px,
+  'md': 768px,
   // "lg": 992px,
-    "lg": 960px,
-  "xl": 1200px
+    'lg': 960px,
+  'xl': 1200px
 );
 
 @mixin mq($breakpoint: medium) {
@@ -23,7 +23,9 @@ $light-shade-gray: #eee;
 
 /* autoprefixer grid: autoplace */
 
-@import "l-aside";
+@import 'l-aside';
+@import 'l-modal';
+@import 'swiper-option';
 /*Nav css goes here*/
 
 *,
@@ -34,9 +36,13 @@ $light-shade-gray: #eee;
   box-sizing: border-box;
 }
 
+img {
+  max-width: 100%;
+}
+
 // START: サーバーに上げるときには都度リセット ↓↓↓
 html {
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 62.5%;
 }
 body {
@@ -147,6 +153,9 @@ header {
   height: 42px;
   cursor: pointer;
   z-index: 10000;
+  &.active {
+    position: fixed;
+  }
 }
 
 .Toggle span {
@@ -204,18 +213,12 @@ header {
   overflow-y: scroll;
 }
 
-.NavMenu {
-  display: none;
-}
-
 .globalMenu.active .nav-list {
   display: none;
   // display: flex;
 }
 
-.NavMenu.active {
-  display: flex;
-  flex-direction: column;
+.navMenu {
   width: 100%;
   position: fixed;
   top: 0;
@@ -224,10 +227,36 @@ header {
   z-index: 1000;
   font-size: 1.6rem;
   color: $light-shade-gray;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.35s ease-in-out;
   background-color: $nearlyBlack;
-  padding: 4rem;
+  padding: 8rem 4rem;
   overflow-y: scroll;
   transform: translateZ(0);
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+  }
+  &.active {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    z-index: 1000;
+    font-size: 1.6rem;
+    color: $light-shade-gray;
+    visibility: visible;
+    opacity: 1;
+    background-color: $nearlyBlack;
+    padding: 8rem 4rem;
+    overflow-y: scroll;
+    transform: translateZ(0);
+  }
 }
 
 .def h2 {
@@ -368,13 +397,22 @@ li.move-right {
   width: 100%;
   height: 100vh;
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
-    url("../images/bg.jpg") center no-repeat;
+    url('../images/bg.jpg') center no-repeat;
   background-size: cover;
   position: relative;
   z-index: -1;
   grid-column: 1 / 3;
   grid-row: 2 / 3;
 }
+// #vegas {
+//   width: 100%;
+//   height: 100vh;
+//   background-size: cover;
+//   position: relative;
+//   z-index: -1;
+//   grid-column: 1 / 3;
+//   grid-row: 2 / 3;
+// }
 
 .text {
   width: 100%;
@@ -389,7 +427,7 @@ li.move-right {
 .text h1 {
   font-size: 4rem;
   margin: 2rem 0;
-  font-family: "Blastimo", sans-serif;
+  font-family: 'Blastimo', sans-serif;
 }
 
 .text h2 {
@@ -413,7 +451,8 @@ li.move-right {
 .l-wrapper {
   display: grid;
   grid-template-columns: 30% 1fr;
-  grid-template-rows: 80px 1fr 800px 120px;
+  grid-template-rows: 80px 1fr 1200px 120px;
+  padding-bottom: 40px;
 }
 
 .l-aside {
@@ -442,6 +481,14 @@ li.move-right {
   padding-bottom: 40px;
 }
 @include mq(lg) {
+  .l-wrapper {
+    padding-bottom: 0;
+  }
+  .l-mainContainer {
+    max-width: 1024px;
+    width: 100%;
+    margin: 0 auto;
+  }
   .text h1 {
     font-size: 8rem;
   }
@@ -498,7 +545,7 @@ li.move-right {
   }
   .sub-menu:before {
     display: block;
-    content: "";
+    content: '';
     position: absolute;
     top: -2.4rem;
     left: 3rem;

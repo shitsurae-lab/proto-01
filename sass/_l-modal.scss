@@ -1,39 +1,46 @@
-.l-aside dt,
-.l-aside a,
-.l-aside li {
+.l-modal dt,
+.l-modal a,
+.l-modal li {
   color: #eee;
 }
-.l-aside__def dt {
-  border: solid 1px #ddd;
-  padding: 8px 8px 8px 16px;
-  margin-bottom: 8px;
-  position: relative;
-  font-size: 16px;
-  line-height: 16px;
-  font-weight: 400;
-  cursor: pointer;
-  &::after {
-    position: absolute;
-    top: 50%;
-    right: 8px;
-    transform: translateY(-50%);
-    font-family: 'Material Icons';
-    content: '\e5cf';
+.l-modal__def {
+  dt {
+    width: 200px;
+    border: solid 1px #ddd;
+    padding: 8px 40px;
+    margin-bottom: 8px;
+    position: relative;
+    font-size: 16px;
+    line-height: 16px;
+    font-weight: 400;
+    cursor: pointer;
+    &::after {
+      position: absolute;
+      top: 50%;
+      right: 8px;
+      transform: translateY(-50%);
+      font-family: 'Material Icons';
+      content: '\e5cf';
+    }
+  }
+  dd {
+    width: 200px;
   }
 }
 
-.l-aside {
-  padding: 16px;
+.l-modal {
+  // padding: 16px;
   li {
+    width: 200px;
     position: relative;
     color: $light-shade-gray;
     font-size: 14px;
     line-height: 14px;
-    padding: 8px 8px 8px 16px;
+    padding: 8px 32px;
     cursor: pointer;
   }
   &__def {
-    width: 96%;
+    width: 100%;
   }
   &__list {
     width: 100%;
