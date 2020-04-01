@@ -5,7 +5,7 @@
 }
 .l-modal__def {
   dt {
-    width: 200px;
+    width: 300px;
     border: solid 1px #ddd;
     padding: 8px 40px;
     margin-bottom: 8px;
@@ -24,14 +24,14 @@
     }
   }
   dd {
-    width: 200px;
+    width: 300px;
   }
 }
 
 .l-modal {
   // padding: 16px;
   li {
-    width: 200px;
+    width: 300px;
     position: relative;
     color: $light-shade-gray;
     font-size: 14px;
@@ -63,17 +63,6 @@
     }
     // 兄弟要素にul(slideToggle)がある場合
     &--sibling {
-      li::after {
-        // position: absolute;
-        // top: 50%;
-        // right: 16px;
-        // transform: translateY(-50%);
-        // font-family: 'Material Icons';
-        // content: '\e5cc';
-      }
-      li {
-        // border-bottom: 1px solid #eee;
-      }
       li.active {
         background-color: $light-shade-gray;
         border-bottom: none;
@@ -88,10 +77,6 @@
     // 兄弟要素にul(slideToggle)がない場合
     &Child {
       font-size: 14px;
-      // border-bottom: 1px solid $light-shade-gray;
-      // &:last-child {
-      //   padding: 6px 8px 40px;
-      // }
     }
   }
 }
