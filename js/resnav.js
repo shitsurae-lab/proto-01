@@ -8,4 +8,9 @@ $(function() {
       $('.navMenu').removeClass('active'); //クラスを外す
     }
   });
+  // responsive hamburger_menu
+  $('.menu-icons').on('click', function() {
+    $(this).toggleClass('active');
+    $('.globalMenu').toggleClass('active');
+  });
 });
