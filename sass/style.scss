@@ -171,17 +171,13 @@ header {
 /*トグルボタンのスタイルを指定*/
 .Toggle {
   display: block;
-  // position: fixed; /* bodyに対しての絶対位置指定 */
-  position: fixed;
-  right: 13px;
-  bottom: 12px;
+  position: relative;
   width: 42px;
   height: 42px;
   cursor: pointer;
-  z-index: 10;
+  // z-index: 10;
   &.active {
-    position: fixed;
-    z-index: 500;
+    z-index: 200;
   }
 }
 
@@ -576,14 +572,28 @@ li.move-right {
   grid-column: 1 / -1;
   grid-row: 5 / 6;
   display: flex;
+  justify-content: space-between;
   background: darkgray;
   @include mq(md) {
     grid-column: 1 / -1;
     grid-row: 5 / 6;
-    display: flex;
+    // display: flex;
   }
   @include mq(lg) {
     display: none;
+  }
+  .p-search {
+    width: 42px;
+    height: 42px;
+    font-size: 30px;
+    line-height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .material-icons {
+      font-size: 30px;
+      color: $yokan;
+    }
   }
 }
 
