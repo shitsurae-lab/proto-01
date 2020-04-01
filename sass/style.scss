@@ -473,9 +473,62 @@ li.move-right {
 }
 .l-wrapper {
   display: grid;
-  grid-template-columns: 30% 1fr;
-  grid-template-rows: 80px 1fr 1200px 120px;
-  padding-bottom: 40px;
+  grid-template-columns: 0px 1fr 0px;
+  grid-template-rows: 80px 1fr 1200px 120px 40px;
+  &__inner {
+    display: grid;
+    grid-column: 2 / 3;
+    grid-row: 3 / 4;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+  }
+  @include mq(md) {
+    display: grid;
+    grid-template-columns: 1fr 760px 1fr;
+    grid-template-rows: 80px 1fr 1200px 120px 40px;
+    &__inner {
+      display: grid;
+      grid-column: 2 / 3;
+      grid-row: 3 / 4;
+      grid-template-columns: 160px 600px;
+      grid-template-rows: 1fr;
+      grid-column-gap: 0px;
+    }
+  }
+  @include mq(lg) {
+    display: grid;
+    grid-template-columns: 1fr 960px 1fr;
+    grid-template-rows: 80px 1fr 1200px 120px;
+    padding-bottom: 0;
+    &__inner {
+      display: grid;
+      grid-column: 2 / 3;
+      grid-row: 3 / 4;
+      grid-template-columns: 18.2% 77.2%;
+      // grid-template-columns: 200px 850px;
+      grid-template-rows: 1fr;
+      grid-column-gap: 4.6%;
+      // grid-column-gap: 50px;
+    }
+  }
+
+  @include mq(xl) {
+    display: grid;
+    grid-template-columns: 1fr 1100px 1fr;
+    grid-template-rows: 80px 1fr 1200px 120px;
+    padding-bottom: 0;
+    &__inner {
+      display: grid;
+      grid-column: 2 / 3;
+      grid-row: 3 / 4;
+      grid-template-columns: 18.2% 77.2%;
+      // grid-template-columns: 200px 850px;
+      grid-template-rows: 1fr;
+      grid-column-gap: 4.6%;
+      // grid-column-gap: 50px;
+    }
+  }
 }
 
 .l-aside {
