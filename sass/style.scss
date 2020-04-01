@@ -67,16 +67,30 @@ dl {
 }
 
 header {
+  grid-column: 1 / -1;
+  grid-row: 1 / 2;
   width: 100%;
-  position: absolute;
   top: 0;
   left: 0;
   z-index: auto;
   height: auto;
   background: $nearlyBlack;
   z-index: 10;
-  // background-color: $nearlyBlack;
-  // z-index: 2000;
+
+  @include mq(md) {
+    width: 100%;
+    grid-column: 1 / -1;
+    grid-row: 1 / 2;
+    // position: absolute;
+    top: 0;
+    left: 0;
+    z-index: auto;
+    height: auto;
+    background: $nearlyBlack;
+    z-index: 10;
+    // background-color: $nearlyBlack;
+    // z-index: 2000;
+  }
 }
 
 .l-navigation {
