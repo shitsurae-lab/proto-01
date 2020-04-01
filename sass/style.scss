@@ -556,9 +556,18 @@ li.move-right {
 }
 
 .l-main {
-  grid-column: 2 / 3;
-  grid-row: 3 / 4;
+  grid-column: 1 / -1;
+  grid-row: 1;
   background-color: #eef2f3;
+  color: #000000;
+  @include mq(md) {
+    grid-column: 2 / 3;
+    grid-row: 1;
+    background-color: #eef2f3;
+    color: #000000;
+    // overflow: hidden;
+  }
+}
 }
 
 .l-footer {
