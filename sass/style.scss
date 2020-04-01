@@ -104,23 +104,27 @@ header {
 
 .menu-icons {
   color: $light-shade-gray;
-  font-size: 4rem;
-  position: absolute;
-  top: 50%;
-  right: 2rem;
-  transform: translateY(-50%);
-  cursor: pointer;
-  z-index: 1500;
   display: block;
-  &--close {
+  position: absolute;
+  right: 13px;
+  top: 12px;
+  width: 42px;
+  height: 42px;
+  cursor: pointer;
+  z-index: 20;
+  .material-icons--close {
     display: none;
   }
+  &.active {
+    z-index: 500;
+  }
 }
-.globalMenu.active .menu-icons--close {
+
+.menu-icons.active .material-icons--close {
   display: block;
 }
 
-.globalMenu.active .menu-icons--default {
+.menu-icons.active .material-icons--open {
   display: none;
 }
 
