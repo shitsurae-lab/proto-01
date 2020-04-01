@@ -123,6 +123,9 @@ header {
   &.active {
     z-index: 500;
   }
+  @include mq(lg) {
+    display: none;
+  }
 }
 
 .menu-icons.active .material-icons--close {
