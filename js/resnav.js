@@ -14,3 +14,16 @@ $(function() {
     $('.globalMenu').toggleClass('active');
   });
 });
+
+$(document).ready(function() {
+  $('.l-floating_nav').hide();
+  $(function() {
+    $(window).scroll(function() {
+      if ($(this).scrollTop() > 100) {
+        $('.l-floating_nav').fadeIn();
+      } else {
+        $('.l-floating_nav').fadeOut();
+      }
+    });
+  });
+});

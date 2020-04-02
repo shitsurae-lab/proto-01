@@ -569,14 +569,22 @@ li.move-right {
 }
 
 .l-floating_nav {
-  grid-column: 1 / -1;
-  grid-row: 5 / 6;
+  position: fixed;
+  bottom: 0;
+  left: 0;
   display: flex;
   justify-content: space-between;
-  background: darkgray;
+  // background: darkgray;
+  background: transparent;
+  // display: none;
+  // grid-column: 1 / -1;
+  // grid-row: 5 / 6;
+  width: 100%;
+  z-index: 500;
+
   @include mq(md) {
-    grid-column: 1 / -1;
-    grid-row: 5 / 6;
+    // grid-column: 1 / -1;
+    // grid-row: 5 / 6;
     // display: flex;
   }
   @include mq(lg) {
