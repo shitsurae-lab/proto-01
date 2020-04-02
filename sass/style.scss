@@ -572,8 +572,8 @@ li.move-right {
   position: fixed;
   bottom: 0;
   left: 0;
-  display: flex;
-  justify-content: space-between;
+  // display: flex;
+  // justify-content: space-between;
   // background: darkgray;
   background: transparent;
   // display: none;
@@ -602,6 +602,10 @@ li.move-right {
       font-size: 30px;
       color: $yokan;
     }
+  }
+  &__inner {
+    display: flex;
+    justify-content: space-between;
   }
 }
 
