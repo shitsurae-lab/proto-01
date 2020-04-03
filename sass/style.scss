@@ -500,9 +500,9 @@ li.move-right {
       display: grid;
       grid-column: 2 / 3;
       grid-row: 3 / 4;
-      grid-template-columns: 160px 600px;
+      grid-template-columns: 18% 80%;
       grid-template-rows: 1fr;
-      grid-column-gap: 0px;
+      grid-column-gap: 2%;
     }
   }
   @include mq(lg) {
