@@ -188,9 +188,9 @@ header {
   position: absolute;
   width: 30px;
   border-bottom: solid 3px $yokan;
-  -webkit-transition: 0.35s ease-in-out; /*変化の速度を指定*/
-  -moz-transition: 0.35s ease-in-out; /*変化の速度を指定*/
-  transition: 0.35s ease-in-out; /*変化の速度を指定*/
+  -webkit-transition: all 0.35s ease-in-out; /*変化の速度を指定*/
+  -moz-transition: all0.35s ease-in-out; /*変化の速度を指定*/
+  transition: all 0.35s ease-in-out; /*変化の速度を指定*/
   left: 6px;
 }
 
