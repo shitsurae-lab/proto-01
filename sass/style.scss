@@ -220,6 +220,7 @@ header {
 .Toggle.active span:nth-child(2),
 .Toggle.active span:nth-child(3) {
   top: 18px;
+  border-bottom: solid 3px $milky-white;
   -webkit-transform: rotate(45deg);
   -moz-transform: rotate(45deg);
   transform: rotate(45deg);
